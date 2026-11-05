@@ -1,0 +1,90 @@
+{
+ "_status": "design/provisional: rank, thức ăn, chu kỳ nuôi, chi phí là số liệu gameplay tạm để hệ thống chạy được; CHƯA đối chiếu nguyên tác. Xem docs/GU_WORM_DATABASE.md. Chu kỳ nuôi tính bằng ngày THẾ GIỚI (1 giờ thật = 1 ngày thế giới) và cố ý dài để người chơi ngoại tuyến vài ngày không mất Cổ. Ba Cổ có 'vital_gu_choice' là các lựa chọn Bản Mệnh Cổ ban đầu (thiết kế tạm).",
+ "overrides": {
+  "gu_nguyet_quang_co": {
+   "rank": 1,
+   "tier": "mortal",
+   "type": "attack",
+   "path": "nguyet_dao",
+   "activation_cost": 3.0,
+   "food": "nguyen_thach",
+   "feeding_cycle_days": 12,
+   "feed_cost": 2,
+   "rarity": "common",
+   "acquisition_method": [
+    "vital_gu_choice",
+    "admin"
+   ],
+   "effects": {},
+   "provisional": true
+  },
+  "gu_tuu_trung": {
+   "rank": 1,
+   "tier": "mortal",
+   "type": "support",
+   "path": null,
+   "activation_cost": 0.0,
+   "food": "nguyen_thach",
+   "feeding_cycle_days": 20,
+   "feed_cost": 3,
+   "rarity": "uncommon",
+   "acquisition_method": [
+    "vital_gu_choice",
+    "admin"
+   ],
+   "effects": {
+    "refine_efficiency_bonus": 0.1
+   },
+   "provisional": true
+  },
+  "gu_hung_luc_co": {
+   "rank": 1,
+   "tier": "mortal",
+   "type": "buff",
+   "path": "luc_dao",
+   "activation_cost": 4.0,
+   "food": "nguyen_thach",
+   "feeding_cycle_days": 12,
+   "feed_cost": 2,
+   "rarity": "common",
+   "acquisition_method": [
+    "vital_gu_choice",
+    "admin"
+   ],
+   "effects": {},
+   "provisional": true
+  },
+  "gu_bach_tru_co": {
+   "rank": 1,
+   "tier": "mortal",
+   "type": "permanent_buff",
+   "path": "luc_dao",
+   "activation_cost": 5.0,
+   "food": "nguyen_thach",
+   "feeding_cycle_days": 16,
+   "feed_cost": 2,
+   "rarity": "uncommon",
+   "acquisition_method": [
+    "admin"
+   ],
+   "effects": {},
+   "provisional": true
+  },
+  "gu_hac_tru_co": {
+   "rank": 1,
+   "tier": "mortal",
+   "type": "permanent_buff",
+   "path": "luc_dao",
+   "activation_cost": 5.0,
+   "food": "nguyen_thach",
+   "feeding_cycle_days": 16,
+   "feed_cost": 2,
+   "rarity": "uncommon",
+   "acquisition_method": [
+    "admin"
+   ],
+   "effects": {},
+   "provisional": true
+  }
+ }
+}

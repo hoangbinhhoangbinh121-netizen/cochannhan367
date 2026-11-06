@@ -1,0 +1,106 @@
+{
+ "_source": "file người dùng: sát chiêu.docx",
+ "_status": "chỉ có tên; chưa có công thức, Cổ Trùng cấu thành, lưu phái (Phase 4 hệ thống 06)",
+ "killer_moves": [
+  {
+   "id": "van_nga",
+   "name": "Vạn ngã",
+   "status": "name_only"
+  },
+  {
+   "id": "van_nga_dai_thu_an",
+   "name": "Vạn ngã đại thụ ấn",
+   "status": "name_only"
+  },
+  {
+   "id": "tam_khi_quy_lai",
+   "name": "Tam khí quy lai",
+   "status": "name_only"
+  },
+  {
+   "id": "ngu_chi_quyen_tam_kiem",
+   "name": "Ngũ chỉ quyền tâm kiếm",
+   "status": "name_only"
+  },
+  {
+   "id": "thien_co_lan_lon",
+   "name": "Thiên cơ lẫn lộn",
+   "status": "name_only"
+  },
+  {
+   "id": "ngu_cam_huyen_quang_khi",
+   "name": "Ngũ cầm huyền quang khí",
+   "status": "name_only"
+  },
+  {
+   "id": "nghich_luu_ho_than_an",
+   "name": "Nghịch lưu hộ thân ấn",
+   "status": "name_only"
+  },
+  {
+   "id": "kiem_co_giao_long_bien",
+   "name": "Kiếm cổ giao long biến",
+   "status": "name_only"
+  },
+  {
+   "id": "quang_am_phi_nhan",
+   "name": "Quang âm phi nhận",
+   "status": "name_only"
+  },
+  {
+   "id": "xuan_tien",
+   "name": "Xuân tiễn",
+   "status": "name_only"
+  },
+  {
+   "id": "van_menh_ca",
+   "name": "Vận mệnh ca",
+   "status": "name_only"
+  },
+  {
+   "id": "dai_dong_phong",
+   "name": "Đại đồng phong",
+   "status": "name_only"
+  },
+  {
+   "id": "tong_huu_phong",
+   "name": "Tống hữu phong",
+   "status": "name_only"
+  },
+  {
+   "id": "an_dang_hon_lac_phach",
+   "name": "Ấn đãng hồn lạc phách",
+   "status": "name_only"
+  },
+  {
+   "id": "hon_bao",
+   "name": "Hồn bạo",
+   "status": "name_only"
+  },
+  {
+   "id": "dan_hon_nhap_mong",
+   "name": "Dẫn hồn nhập mộng",
+   "status": "name_only"
+  },
+  {
+   "id": "diem_la",
+   "name": "Diêm La",
+   "status": "name_only"
+  },
+  {
+   "id": "hon_ap",
+   "name": "Hồn Áp",
+   "status": "name_only"
+  },
+  {
+   "id": "ha_phien",
+   "name": "Hạ phiến",
+   "status": "name_only"
+  },
+  {
+   "id": "duong_mang_boi_hoa_y",
+   "name": "Dương mãng bối hoả y",
+   "status": "name_only"
+  }
+ ]
+}

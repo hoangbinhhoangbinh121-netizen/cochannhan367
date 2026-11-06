@@ -1,0 +1,35 @@
+{
+ "_status": "design: toàn bộ số liệu chợ là thiết kế tạm chờ cân bằng bằng mô phỏng. Nguyên Thạch là tiền tệ của Cổ Sư (nguyên tác); giá và hàng tồn là thiết kế.",
+ "sell_back_ratio": 0.5,
+ "trade_fee_ratio": 0.05,
+ "equilibrium_stock": 3,
+ "demand_half_life_days": 10,
+ "market_cap_multiplier": 2,
+ "items": {
+  "gu_nguyet_quang_co": {
+   "base_price": 40,
+   "max_stock": 6,
+   "restock_per_day": 0.5
+  },
+  "gu_tuu_trung": {
+   "base_price": 60,
+   "max_stock": 5,
+   "restock_per_day": 0.4
+  },
+  "gu_hung_luc_co": {
+   "base_price": 50,
+   "max_stock": 6,
+   "restock_per_day": 0.5
+  },
+  "gu_bach_tru_co": {
+   "base_price": 80,
+   "max_stock": 4,
+   "restock_per_day": 0.3
+  },
+  "gu_hac_tru_co": {
+   "base_price": 80,
+   "max_stock": 4,
+   "restock_per_day": 0.3
+  }
+ }
+}

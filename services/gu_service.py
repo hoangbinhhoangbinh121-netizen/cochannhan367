@@ -121,12 +121,12 @@ class GuService(BaseService):
                 inst.update(state="refined", refined_world_day=day, last_fed_world_day=day)
                 tx.put("gu_instances", ref, inst)
                 bump(char, "gu_refined")
-                return {"name": gd["name"], "success": True, "chance": chance, "cost": cost, "died": False}
+                return {"gu_id": inst["gu_id"], "name": gd["name"], "success": True, "chance": chance, "cost": cost, "died": False}
             died = ctx.rng.random() < cfg["refine_fail_death_chance"] and not inst.get("vital")
             if died:
                 char["gu_ids"].remove(ref)
                 tx.delete("gu_instances", ref)
-            return {"name": gd["name"], "success": False, "chance": chance, "cost": cost, "died": died}
+            return {"gu_id": inst["gu_id"], "name": gd["name"], "success": False, "chance": chance, "cost": cost, "died": died}
 
         return await self.mutate(discord_id, fn, with_gu=True)
 
@@ -138,7 +138,7 @@ class GuService(BaseService):
             if ev["state"] == "dead":
                 char["gu_ids"].remove(ref)
                 tx.delete("gu_instances", ref)
-                return {"name": gd["name"], "dead": True}
+                return {"gu_id": inst["gu_id"], "name": gd["name"], "dead": True}
             food, cost = gd["food"], gd["feed_cost"]
             if char["resources"].get(food, 0) < cost:
                 raise GameError(f"Không đủ thức ăn: cần {cost} {food.replace('_', ' ')}.")
@@ -146,7 +146,7 @@ class GuService(BaseService):
             inst["last_fed_world_day"] = day
             inst["vitality"] = min(100, ev["vitality"] + 25)
             tx.put("gu_instances", ref, inst)
-            return {"name": gd["name"], "dead": False, "cost": cost, "food": food, "vitality": inst["vitality"]}
+            return {"gu_id": inst["gu_id"], "name": gd["name"], "dead": False, "cost": cost, "food": food, "vitality": inst["vitality"]}
 
         return await self.mutate(discord_id, fn, with_gu=True)
 

@@ -18,7 +18,7 @@ python -m unittest discover -s tests -t .
 ```
 
 ## Hình ảnh
-Xem `docs/ART.md`. Tạo lại: `python tools/gen_pixel_art.py` (sprite Cổ cũ, đã thay bằng bảng sprite của bạn; cắt lại bảng bằng `python tools/slice_gu_sheet.py`) và `python tools/gen_ui_art.py` (banner, biểu tượng). Cần Pillow.
+Toàn bộ giao diện là ảnh pixel (xem `docs/ART.md`). Tạo lại: `python tools/gen_pixel_art.py` (sprite Cổ cũ, đã thay bằng bảng sprite của bạn; cắt lại bảng bằng `python tools/slice_gu_sheet.py`) và `python tools/gen_ui_art.py` (banner, biểu tượng). Cần Pillow.
 
 ## Dữ liệu
 - `data/config/rules.json`: toàn bộ con số cân bằng (đổi không cần sửa code).
@@ -26,7 +26,7 @@ Xem `docs/ART.md`. Tạo lại: `python tools/gen_pixel_art.py` (sprite Cổ cũ
 - Lưu phái, sát chiêu, thể chất: mới có tên (từ file của bạn).
 
 ## Lệnh hiện có
-Người chơi: `/khaikhieu /nhanvat /tuvi /tuluyen /dotpha /cotrung /kho-co /luyen-co /nuoi-co /thegioi /khaithac /ban-do /dichuyen /thang-tien /ban-menh-co`.
+Người chơi: `/khaikhieu /nhanvat /tuvi /tuluyen /dotpha /cotrung /kho-co /luyen-co /nuoi-co /thegioi /khaithac /ban-do /dichuyen /thang-tien /ban-menh-co /muaban (xem, mua, ban) /giaodich`.
 Quản trị (chỉ OWNER_IDS, có nhật ký `logs/admin.log`): `/admin cap-co, cap-nguyen-thach, sao-luu, kiem-tra-du-lieu, tick-the-gioi`.
 
 ## Vận hành

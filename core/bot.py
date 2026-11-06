@@ -17,6 +17,7 @@ from services.context import GameContext
 from services.cultivation_service import CultivationService
 from services.gu_service import GuService
 from services.map_service import MapService
+from services.market_service import MarketService
 from services.world_service import WorldService
 
 log = logging.getLogger("ccn.bot")
@@ -28,6 +29,7 @@ EXTENSIONS = [
     "cogs.gu.gu_cog",
     "cogs.world.world_cog",
     "cogs.world.map_cog",
+    "cogs.economy.market_cog",
     "cogs.administration.admin_cog",
 ]
 
@@ -50,7 +52,7 @@ class CCNBot(commands.Bot):
         gu = GuService(ctx)
         self.game = SimpleNamespace(ctx=ctx, characters=CharacterService(ctx), gu=gu,
                                     cultivation=CultivationService(ctx, gu), world=WorldService(ctx),
-                                    map=MapService(ctx), ascension=AscensionService(ctx))
+                                    map=MapService(ctx), ascension=AscensionService(ctx), market=MarketService(ctx))
         await self.game.world.ensure_seed()
         error_handler.setup(self)
         for ext in EXTENSIONS:

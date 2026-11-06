@@ -13,7 +13,8 @@
    "rarity": "common",
    "acquisition_method": [
     "vital_gu_choice",
-    "admin"
+    "admin",
+    "market"
    ],
    "effects": {},
    "provisional": true
@@ -30,7 +31,8 @@
    "rarity": "uncommon",
    "acquisition_method": [
     "vital_gu_choice",
-    "admin"
+    "admin",
+    "market"
    ],
    "effects": {
     "refine_efficiency_bonus": 0.1
@@ -49,7 +51,8 @@
    "rarity": "common",
    "acquisition_method": [
     "vital_gu_choice",
-    "admin"
+    "admin",
+    "market"
    ],
    "effects": {},
    "provisional": true
@@ -65,7 +68,8 @@
    "feed_cost": 2,
    "rarity": "uncommon",
    "acquisition_method": [
-    "admin"
+    "admin",
+    "market"
    ],
    "effects": {},
    "provisional": true
@@ -81,7 +85,8 @@
    "feed_cost": 2,
    "rarity": "uncommon",
    "acquisition_method": [
-    "admin"
+    "admin",
+    "market"
    ],
    "effects": {},
    "provisional": true

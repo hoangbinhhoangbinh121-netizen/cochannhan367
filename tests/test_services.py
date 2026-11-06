@@ -149,6 +149,45 @@ class ServiceTests(unittest.IsolatedAsyncioTestCase):
             await self.gu.grant(1, "gu_xuan_thu_thien")  # chưa có dữ liệu gameplay
 
 
+class GuClassificationTests(unittest.TestCase):
+    def setUp(self):
+        from core.rules import GameData
+        self.d = GameData(ROOT / "data")
+
+    def test_all_74_classified_with_expected_proposal_counts(self):
+        gu = self.d.gu.values()
+        self.assertEqual(len(self.d.gu), 74)
+        counts = {k: sum(1 for g in gu if g["proposed_quality"] == k) for k in ("tiên", "phàm", "đặc thù")}
+        self.assertEqual(counts, {"tiên": 17, "phàm": 55, "đặc thù": 2})
+
+    def test_only_verified_entries_have_real_quality_and_a_source(self):
+        for g in self.d.gu.values():
+            if g["quality_status"] == "verified":
+                self.assertIn(g["quality"], ("tiên", "phàm", "đặc thù"))
+                self.assertTrue(g["source"], g["gu_id"])
+            else:
+                self.assertEqual(g["quality"], "unknown", g["gu_id"])
+                self.assertIsNone(g["rank_observed"])
+
+    def test_immortal_gu_ranks_are_six_or_more_and_verified_ones_are_known(self):
+        verified = {g["gu_id"]: g for g in self.d.gu.values() if g["quality_status"] == "verified"}
+        self.assertEqual(set(verified), {"gu_xuan_thu_thien", "gu_dinh_tien_du", "gu_nien_luu_nhu_thuy_co", "gu_nhan_nhu_co_co",
+                                         "gu_thien_nguyen_bao_lien_co", "gu_tri_tue_co", "gu_hy_vong_co"})
+        for g in verified.values():
+            if g["quality"] == "tiên":
+                self.assertGreaterEqual(g["rank_observed"][0], 6, g["gu_id"])  # từ Lục Chuyển là Tiên Cổ
+        self.assertEqual(verified["gu_nien_luu_nhu_thuy_co"]["rank_observed"], [8, 8])
+        self.assertEqual(verified["gu_tri_tue_co"]["rank_observed"], [9, 9])
+
+    def test_playable_mortal_gu_are_not_immortal_and_immortal_gu_not_grantable(self):
+        for g in self.d.gu.values():
+            if self.d.playable(g):
+                self.assertNotEqual(g["proposed_quality"], "tiên", g["gu_id"])
+                self.assertLessEqual(g["rank"], 5)  # Cổ phàm nhân tối đa Ngũ Chuyển
+        for gid in ("gu_xuan_thu_thien", "gu_dinh_tien_du", "gu_tri_tue_co"):
+            self.assertFalse(self.d.playable(self.d.gu[gid]))  # chưa có hệ Tiên Cổ nên không cấp được
+
+
 class GuDataTests(unittest.TestCase):
     def test_seed_integrity(self):
         seed = json.loads((ROOT / "data/gu_worms/gu_seed.json").read_text(encoding="utf-8"))["gu"]

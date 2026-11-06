@@ -58,3 +58,10 @@ Khai Khiếu và Bản Mệnh Cổ: xem `AWAKENING_RULES.md`. Khoảng thành l�
 | Năm đại vực Nam Cương, Bắc Nguyên, Đông Hải, Tây Mạc, Trung Châu; Trung Châu ở giữa | canon (vị trí tương đối) |
 | Tọa độ, đường nối, địa hình, độ nguy hiểm, tốc độ đi (120 đơn vị/ngày TG, +10% mỗi chuyển), tỉ lệ phục kích 4% mỗi bậc nguy hiểm, mất 10-25% Nguyên Thạch | **design** |
 | Sinh thái, thú hoang và phục kích bằng chiến đấu thật | chưa có (hiện chỉ trừ Nguyên Thạch) |
+
+## Chợ và giao dịch
+
+| Quy tắc | Trạng thái |
+|---|---|
+| Nguyên Thạch là tiền tệ của Cổ Sư | canon |
+| Giá gốc từng Cổ, hàng tồn tối đa, tốc độ hồi hàng, công thức cung cầu, thu mua 50%, phí 5% | **design** (`MARKET_RULES.md`) |

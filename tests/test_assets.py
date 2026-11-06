@@ -51,6 +51,22 @@ class AssetTests(unittest.TestCase):
         for i in range(1, 6):
             self.assertTrue((ROOT / f"assets/ui/orb_r{i}.png").exists())
 
+    def test_ceremony_art(self):
+        frames = []
+        for n in ("0", "1", "2", "3", "4", "fail", "success"):
+            p = pixel.ceremony_path(n)
+            self.assertTrue(p.exists(), n)
+            with Image.open(p) as im:
+                self.assertEqual(im.width, 960)
+                frames.append(hashlib.md5(p.read_bytes()).hexdigest())
+        self.assertEqual(len(set(frames)), len(frames))  # mỗi cảnh khác nhau
+        with Image.open(pixel.ceremony_path("success")) as im:
+            colors = im.convert("RGB").getcolors(maxcolors=1000)
+            self.assertIsNotNone(colors)
+            self.assertLessEqual(len(colors), 32)  # đã pixel hóa
+        for n in ("khai_khieu_dai_dien.jpg", "khai_khieu_thanh_cong.jpg"):
+            self.assertTrue((ROOT / "assets/ui/source" / n).exists())
+
     def test_immortal_card_renders(self):
         v = {"name": "Cổ Tiên", "gender": "nam", "age": 90.0, "lifespan": 1000, "grade": "Giáp Đẳng", "ratio": 0.9, "physique": None,
              "realm": "Lục Chuyển Cổ Tiên (Thượng Phẩm)", "essence_color": "Thanh Bồ Đào", "essence": 0.0, "capacity": 0.0,

@@ -14,17 +14,22 @@ class GameData:
         d = Path(data_dir)
         self.rules = _load(d / "config/rules.json")
         self.regions = _load(d / "config/regions.json")
+        self.market = _load(d / "config/market.json")
         self.physiques = _load(d / "config/physiques.json")["physiques"]
         self.paths = _load(d / "paths/paths.json")["paths"]
         self.events = _load(d / "events/definitions.json")["events"]
         seed = _load(d / "gu_worms/gu_seed.json")["gu"]
         over = _load(d / "gu_worms/gu_gameplay.json")["overrides"]
+        classes = _load(d / "gu_worms/gu_classification.json")["gu"]
         self.gu: dict[str, dict] = {}
         for g in seed:
             merged = dict(g)
             merged.update(over.get(g["gu_id"], {}))
+            merged.update(classes[g["gu_id"]])
             merged.setdefault("provisional", False)
             self.gu[g["gu_id"]] = merged
+        if set(classes) != set(self.gu):
+            raise ValueError("gu_classification.json không khớp danh sách Cổ Trùng")
         unknown = set(over) - set(self.gu)
         if unknown:
             raise ValueError(f"gu_gameplay.json tham chiếu gu_id không có trong seed: {sorted(unknown)}")

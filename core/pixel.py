@@ -11,6 +11,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
+from core.fmt import thanh
+
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 RANK_COLORS = {1: (74, 160, 112), 2: (192, 74, 58), 3: (216, 220, 232), 4: (232, 184, 48), 5: (160, 96, 224), 6: (110, 190, 90)}
 BG, PANEL, INK, MUTED = (20, 18, 31), (32, 29, 48), (236, 232, 220), (140, 136, 156)
@@ -63,6 +65,11 @@ def banner_path(name: str) -> Path | None:
     return p if p.exists() else None
 
 
+def ceremony_path(name: str) -> Path:
+    """name: '0'..'4' (diễn tiến), 'success', 'fail'."""
+    return ASSETS / "ui" / f"ceremony_{name}.png"
+
+
 def _paste(img: Image.Image, path: Path | None, xy, size: int | None = None) -> None:
     if path is None or not path.exists():
         return
@@ -88,7 +95,7 @@ def profile_card(v: dict) -> Image.Image:
     steps = f" | {v['steps']} bước" if v.get("steps") is not None else ""
     _text(d, (192, 90), f"{gender} | {v['age']:.0f}/{v['lifespan']} tuổi{steps} | {v['region']}", 15, MUTED, False)
     phys = f" | {v['physique']}" if v["physique"] else ""
-    _text(d, (192, 112), f"{v['grade']} ({v['ratio'] * 10:.1f} thành){phys}", 15, MUTED, False)
+    _text(d, (192, 112), f"{v['grade']} ({thanh(v['ratio'])}){phys}", 15, MUTED, False)
     if v.get("immortal"):
         _text(d, (192, 142), "Tiên Nguyên", 14, INK)
         _text(d, (192, 164), f"Tiên khiếu {v['immortal_tier']} | sắc {v['essence_color']}", 14, accent, False)

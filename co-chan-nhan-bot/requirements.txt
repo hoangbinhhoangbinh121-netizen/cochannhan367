@@ -1,3 +1,0 @@
-discord.py>=2.4,<3
-Pillow>=10.0          # vẽ thẻ nhân vật, lưới Cổ, bản đồ lúc chạy; và sinh tài nguyên pixel
-openpyxl>=3.1         # chỉ cần cho tools/import_gu_xlsx.py

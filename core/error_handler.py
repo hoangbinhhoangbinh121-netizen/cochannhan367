@@ -5,8 +5,9 @@ import logging
 import discord
 from discord import app_commands
 
+from core import screens
 from core.errors import GameError
-from core.ui import error_embed
+from core.ui import COLORS, reply
 
 log = logging.getLogger("ccn.errors")
 
@@ -24,8 +25,4 @@ def setup(bot) -> None:
         else:
             log.exception("Lỗi không lường trước ở lệnh %s", getattr(interaction.command, "name", "?"), exc_info=original)
             msg = "Đã xảy ra lỗi nội bộ. Không có thay đổi nào được ghi nếu giao dịch chưa hoàn tất."
-        embed = error_embed(msg)
-        if interaction.response.is_done():
-            await interaction.followup.send(embed=embed, ephemeral=True)
-        else:
-            await interaction.response.send_message(embed=embed, ephemeral=True)
+        await reply(interaction, screens.error(msg), name="loi.png", color=COLORS["error"], ephemeral=True)

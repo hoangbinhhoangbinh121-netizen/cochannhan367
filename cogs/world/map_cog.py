@@ -4,9 +4,10 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from core import pixel
+from core import pixel, screens
 from core.errors import GameError
-from core.ui import COLORS, ask_confirm, png_file
+from core.fmt import real_minutes
+from core.ui import COLORS, ask_confirm, reply
 
 
 class MapCog(commands.Cog):
@@ -18,7 +19,7 @@ class MapCog(commands.Cog):
         return self.bot.game
 
     def _minutes(self, world_days: float) -> float:
-        return world_days * 86400 / self.game.ctx.time.scale / 60
+        return real_minutes(world_days, self.game.ctx.time.scale)
 
     @app_commands.command(name="ban-do", description="Xem bản đồ năm đại vực và vị trí của bạn.")
     @app_commands.checks.cooldown(1, 5.0)
@@ -28,14 +29,10 @@ class MapCog(commands.Cog):
         img = pixel.world_map(m.regions, m.edges, st["pos"], st["route"], st["region"])
         if st["region"]:
             r = m.regions[st["region"]]
-            text = f"Bạn đang ở **{r['name']}** ({r['terrain']}, nguy hiểm {r['danger']}/5)."
+            text = f"Bạn đang ở {r['name']} ({r['terrain']}, nguy hiểm {r['danger']}/5)."
         else:
-            text = f"Bạn đang trên đường tới **{m.regions[st['to']]['name']}**, còn khoảng {self._minutes(st['days_left']):.0f} phút (giờ thật)."
-        if st["notices"]:
-            text += "\n\n" + "\n".join(st["notices"])
-        e = discord.Embed(description=text, color=COLORS["world"])
-        e.set_image(url="attachment://ban_do.png")
-        await interaction.response.send_message(embed=e, file=png_file(pixel.to_png(img), "ban_do.png"))
+            text = f"Bạn đang trên đường tới {m.regions[st['to']]['name']}, còn khoảng {self._minutes(st['days_left']):.0f} phút (giờ thật)."
+        await reply(interaction, screens.map_screen(img, text, st["notices"]), name="ban_do.png", color=COLORS["world"])
 
     @app_commands.command(name="dichuyen", description="Di chuyển tới một đại vực khác (tốn thời gian, có nguy cơ bị phục kích).")
     @app_commands.describe(dich="Vùng muốn đến")
@@ -45,16 +42,13 @@ class MapCog(commands.Cog):
         if dich not in m.regions:
             raise GameError("Hãy chọn vùng trong danh sách gợi ý.")
         plan = await self.game.map.preview(interaction.user.id, dich)
-        names = " → ".join(m.regions[r]["name"] for r in plan["route"])
-        warn = discord.Embed(title=f"Hành trình tới {m.regions[dich]['name']}", color=COLORS["world"],
-                             description=(f"Lộ trình: {names}\nThời gian: khoảng **{self._minutes(plan['days']):.0f} phút** (giờ thật).\n"
-                                          f"Nguy hiểm tối đa: {plan['danger']}/5, nguy cơ bị phục kích **{plan['ambush_chance'] * 100:.0f}%** "
-                                          "(mất một phần Nguyên Thạch).\nTrên đường bạn không thể khai thác. Xác nhận?"))
-        if not await ask_confirm(interaction, warn):
+        names = " > ".join(m.regions[r]["name"] for r in plan["route"])
+        img = screens.travel_confirm(names, self._minutes(plan["days"]), plan["danger"], plan["ambush_chance"], m.regions[dich]["name"])
+        if not await ask_confirm(interaction, img, color=COLORS["world"]):
             await interaction.followup.send("Đã hủy hành trình.", ephemeral=True)
             return
         plan = await self.game.map.travel(interaction.user.id, dich)
-        await interaction.followup.send(embed=discord.Embed(color=COLORS["world"], description=f"Bạn lên đường tới **{m.regions[dich]['name']}**, dự kiến đến sau khoảng {self._minutes(plan['days']):.0f} phút."))
+        await reply(interaction, screens.travel_started(m.regions[dich]["name"], self._minutes(plan["days"])), name="hanh_trinh.png", color=COLORS["world"])
 
     @dichuyen.autocomplete("dich")
     async def dichuyen_autocomplete(self, interaction: discord.Interaction, current: str):

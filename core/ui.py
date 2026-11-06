@@ -1,4 +1,5 @@
-"""Thành phần giao diện Discord dùng chung: màu theo hệ thống, thanh tiến độ, xác nhận."""
+"""Thành phần giao diện Discord dùng chung. Toàn bộ chữ của game nằm trong ảnh pixel (core.screens);
+Discord chỉ làm khung gửi ảnh, nút xác nhận và màu viền."""
 from __future__ import annotations
 
 import io
@@ -15,24 +16,32 @@ def progress_bar(cur: float, mx: float, width: int = 12) -> str:
     return "▰" * filled + "▱" * (width - filled)
 
 
-def error_embed(message: str) -> discord.Embed:
-    return discord.Embed(description=message, color=COLORS["error"])
+def png_file(src: "io.BytesIO | Path", name: str) -> discord.File:
+    """Đính ảnh vào tin nhắn; trong embed dùng url=f'attachment://{name}'."""
+    return discord.File(src if isinstance(src, io.BytesIO) else str(src), filename=name)
 
 
-def profile_embed(v: dict, title: str | None = None) -> discord.Embed:
-    e = discord.Embed(title=title or v["name"], color=COLORS["character"])
-    gender = "Nam" if v["gender"] == "nam" else "Nữ"
-    e.add_field(name="Thân phận", value=f"{gender}, {v['age']:.0f} tuổi (thọ nguyên {v['lifespan']})\nVùng: {v['region']}", inline=False)
-    phys = f"\nThể chất: {v['physique']}" if v["physique"] else ""
-    e.add_field(name="Tư chất", value=f"{v['grade']} ({v['ratio'] * 10:.1f} thành){phys}", inline=False)
-    e.add_field(name="Cảnh giới", value=f"{v['realm']}\nNguyên Hải sắc {v['essence_color']}", inline=False)
-    e.add_field(name="Chân nguyên", value=f"{progress_bar(v['essence'], v['capacity'])}\n{v['essence']:.1f} / {v['capacity']:.1f}", inline=False)
-    e.add_field(name="Căn cơ", value=f"{v['foundation']:.0f}/100", inline=True)
-    e.add_field(name="Nguyên Thạch", value=str(v["stones"]), inline=True)
-    e.add_field(name="Cổ Trùng", value=str(v["gu_count"]), inline=True)
-    if v.get("deadline_years_left") is not None:
-        e.set_footer(text=f"Thập Tuyệt Thể: còn khoảng {max(v['deadline_years_left'], 0):.1f} năm để thăng tiên trước khi Không Khiếu tự bạo.")
-    return e
+def screen(img, name: str = "man_hinh.png", color: int = COLORS["character"]):
+    """Ảnh pixel của một màn hình -> (embed chỉ có ảnh, file)."""
+    from core import pixel
+    e = discord.Embed(color=color)
+    e.set_image(url=f"attachment://{name}")
+    return e, png_file(pixel.to_png(img), name)
+
+
+async def reply(interaction: discord.Interaction, img, *, name: str = "man_hinh.png", color: int = COLORS["character"],
+                ephemeral: bool = False, content: str | None = None, view: discord.ui.View | None = None, wait: bool = False):
+    """Gửi màn hình pixel; tự chọn phản hồi đầu tiên hoặc followup."""
+    e, f = screen(img, name, color)
+    kw = {"embed": e, "file": f, "ephemeral": ephemeral}
+    if content:
+        kw["content"] = content
+    if view is not None:
+        kw["view"] = view
+    if interaction.response.is_done():
+        return await interaction.followup.send(wait=wait, **kw)
+    await interaction.response.send_message(**kw)
+    return await interaction.original_response() if wait else None
 
 
 class ConfirmView(discord.ui.View):
@@ -60,15 +69,10 @@ class ConfirmView(discord.ui.View):
         await interaction.response.defer()
 
 
-async def ask_confirm(interaction: discord.Interaction, embed: discord.Embed) -> bool:
-    """Gửi bảng xác nhận (chỉ người gọi lệnh thấy và bấm được). True nếu xác nhận."""
+async def ask_confirm(interaction: discord.Interaction, img, *, color: int = COLORS["character"]) -> bool:
+    """Gửi màn hình xác nhận pixel (chỉ người gọi lệnh thấy và bấm được). True nếu xác nhận."""
     view = ConfirmView(interaction.user.id)
-    await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
+    await reply(interaction, img, name="xac_nhan.png", color=color, ephemeral=True, view=view)
     await view.wait()
     await interaction.edit_original_response(view=None)
     return bool(view.confirmed)
-
-
-def png_file(src: "io.BytesIO | Path", name: str) -> discord.File:
-    """Đính ảnh vào tin nhắn; trong embed dùng url=f'attachment://{name}'."""
-    return discord.File(src if isinstance(src, io.BytesIO) else str(src), filename=name)

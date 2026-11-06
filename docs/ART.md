@@ -6,7 +6,16 @@
 - **Định Tiên Du** và **Xuân Thu Thiền** dùng ảnh riêng của bạn (`assets/gu/user_source/`), chỉ cắt vuông và đổi cỡ.
 - Bộ sprite sinh bằng thuật toán trước đó được giữ ở `assets/gu/legacy/` (không còn dùng).
 
-## Giao diện
-- `assets/ui/banner_*.png` (960x320): world, character, cultivation, gu và 5 đại vực. Sinh bằng `python tools/gen_ui_art.py`.
-- `assets/ui/orb_r1..r5.png`: quả cầu Nguyên Hải theo màu từng chuyển. `icon_stone/foundation/lifespan.png`.
-- `core/pixel.py` vẽ lúc chạy: thẻ nhân vật (`/nhanvat`, `/khaikhieu`), lưới Kho Cổ (`/kho-co`), bản đồ (`/ban-do`). Chữ dùng DejaVu Sans Mono (kèm giấy phép trong `assets/fonts/`), tắt khử răng cưa để giữ nét pixel và đủ dấu tiếng Việt.
+## Giao diện: toàn bộ màn hình là ảnh pixel
+Mọi phản hồi của game (hồ sơ, tu vi, luyện hóa, đột phá, thăng tiên, Cổ Trùng, thế giới, bản đồ, hành trình, quản trị, thông báo lỗi và cả bảng xác nhận) là một ảnh pixel 720 px rộng; Discord chỉ làm khung gửi ảnh và hai nút Xác nhận/Hủy (nút là thành phần của Discord nên không vẽ pixel được).
+- `core/pixel_ui.py`: bộ dựng khối (tiêu đề + biểu tượng 8x8, văn bản tự xuống dòng, bảng nhãn-giá trị, thanh chia ô, hộp thông báo, ảnh/banner, sprite kèm nội dung, hai cột) và `render()` ghép thành màn hình có khung pixel.
+- `core/screens.py`: tất cả màn hình của game (hàm thuần, nhận dữ liệu service, trả ảnh); cog chỉ gọi `core.ui.reply`. Muốn đổi giao diện một lệnh chỉ cần sửa hàm tương ứng ở đây. Có test dựng thử 37 màn hình.
+- `core/pixel.py`: thẻ nhân vật, lưới Kho Cổ, bản đồ. `core/pixel_icons.py`: 33 biểu tượng 8x8. Màu nhấn theo hệ thống (nhân vật tím, tu luyện xanh ngọc, Cổ vàng, thế giới xanh dương, quản trị xám, lỗi đỏ, Cổ Tiên xanh bồ đào).
+- Chữ dùng DejaVu Sans Mono tắt khử răng cưa (đủ dấu tiếng Việt, **không có Hán tự**), nên Hán tự của Cổ Trùng được gửi kèm dạng chữ thường trong tin nhắn `/cotrung`.
+- Đại Điển Khai Khiếu: `assets/ui/ceremony_0..4.png` (biển ánh sáng Hy Vọng Cổ, vẽ rộng ra từ ảnh của bạn), `ceremony_success.png` (ảnh khai khiếu thành công của bạn đã pixel hóa 32 màu), `ceremony_fail.png`; sinh bằng `python tools/gen_ceremony_art.py`. Ảnh nguồn nằm ở `assets/ui/source/`.
+
+## Hiển thị tư chất
+`core/fmt.thanh`: 10 thành chỉ dành cho Thập Tuyệt Thể; các hạng khác làm tròn xuống nên Giáp Đẳng tối đa hiện 9.9 thành (trước đây 0.999 bị làm tròn thành "10.0", đã sửa và có test).
+
+## Cổ Trùng
+Toàn bộ 74 Cổ đều có hình (72 từ bảng sprite của bạn, 2 là ảnh riêng của bạn) và được dùng trong mọi màn hình; có test kiểm tra.

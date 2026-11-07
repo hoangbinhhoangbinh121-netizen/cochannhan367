@@ -14,11 +14,11 @@ Lưu ý chất lượng dữ liệu nguồn: tên *Cổ Định Vận* có Hán 
 
 | gu_id | Tên | Rank | Loại | Thức ăn | Chu kỳ (ngày TG) | Hiệu ứng cơ chế | Phân loại |
 |---|---|---|---|---|---|---|---|
-| `gu_tuu_trung` | Tửu Trùng | 1 | support | nguyen_thach x3 | 20 | {"refine_efficiency_bonus": 0.1} | chưa xác minh (đề xuất: Phàm cổ) |
-| `gu_nguyet_quang_co` | Nguyệt Quang Cổ | 1 | attack | nguyen_thach x2 | 12 | chưa có (chờ hệ thống chiến đấu) | chưa xác minh (đề xuất: Phàm cổ) |
+| `gu_tuu_trung` | Tửu Trùng | 1 | support | nguyen_thach x3 | 20 | {"refine_efficiency_bonus": 0.1} | Phàm cổ (chuyển 1), đã đối chiếu (S14 (ch.8, 19)) |
+| `gu_nguyet_quang_co` | Nguyệt Quang Cổ | 1 | attack | nguyen_thach x2 | 12 | chưa có (chờ hệ thống chiến đấu) | Phàm cổ (chuyển 1), đã đối chiếu (S14 (ch.8, 19, 157)) |
 | `gu_hung_luc_co` | Hùng Lực Cổ | 1 | buff | nguyen_thach x2 | 12 | chưa có (chờ hệ thống chiến đấu) | chưa xác minh (đề xuất: Phàm cổ) |
-| `gu_bach_tru_co` | Bạch Trư Cổ | 1 | permanent_buff | nguyen_thach x2 | 16 | chưa có (chờ hệ thống chiến đấu) | chưa xác minh (đề xuất: Phàm cổ) |
-| `gu_hac_tru_co` | Hắc Trư Cổ | 1 | permanent_buff | nguyen_thach x2 | 16 | chưa có (chờ hệ thống chiến đấu) | chưa xác minh (đề xuất: Phàm cổ) |
+| `gu_bach_tru_co` | Bạch Trư Cổ | 1 | permanent_buff | nguyen_thach x2 | 16 | chưa có (chờ hệ thống chiến đấu) | Phàm cổ (chuyển 1), đã đối chiếu (S14 (ch.62, 64)) |
+| `gu_hac_tru_co` | Hắc Trư Cổ | 1 | permanent_buff | nguyen_thach x2 | 16 | chưa có (chờ hệ thống chiến đấu) | Phàm cổ (chuyển 1), đã đối chiếu (S14 (ch.62, 64)) |
 
 ## Chưa dùng được (chờ nghiên cứu)
 
@@ -52,7 +52,7 @@ Lưu ý chất lượng dữ liệu nguồn: tên *Cổ Định Vận* có Hán 
 | `gu_thu_diep_co` | Thư Điệp Cổ | 信蝶蛊 | chưa xác minh (đề xuất: Phàm cổ) | Dùng để truyền tin hoặc gửi thư. |
 | `gu_ghi_anh_co` | Ghi Ảnh Cổ | 留影蛊 | chưa xác minh (đề xuất: Phàm cổ) | Ghi lại hình ảnh hoặc sự việc để xem lại. |
 | `gu_cot_mau_co` | Cốt Mâu Cổ | 骨矛蛊 | chưa xác minh (đề xuất: Phàm cổ) | Tạo mâu xương để tấn công. |
-| `gu_bach_ngoc_co` | Bạch Ngọc Cổ | 白玉蛊 | chưa xác minh (đề xuất: Phàm cổ) | Cường hóa thân thể và tăng khả năng phòng ngự theo hiệu ứng bạch ngọc. |
+| `gu_bach_ngoc_co` | Bạch Ngọc Cổ | 白玉蛊 | Phàm cổ (chuyển 2), đã đối chiếu (S14 (ch.64)) | Cường hóa thân thể và tăng khả năng phòng ngự theo hiệu ứng bạch ngọc. |
 | `gu_thien_bong_co` | Thiên Bồng Cổ | 天蓬蛊 | chưa xác minh (đề xuất: Phàm cổ) | Tạo lớp bảo hộ quanh người dùng để giảm sát thương. |
 | `gu_bang_tinh_co` | Băng Tinh Cổ | 冰晶蛊 | chưa xác minh (đề xuất: Phàm cổ) | Tạo trạng thái hoặc sức mạnh băng tinh, tăng năng lực phòng ngự và công kích liên quan đến băng. |
 | `gu_thuy_toan_co` | Thủy Toản Cổ | 水钻蛊 | chưa xác minh (đề xuất: Phàm cổ) | Tạo mũi khoan nước để công kích hoặc xuyên phá. |

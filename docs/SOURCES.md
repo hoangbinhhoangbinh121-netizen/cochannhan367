@@ -18,6 +18,7 @@ Chỉ liệt kê những nguồn đã thực sự mở và đọc trong Phase 1 
 | S11 | Bản dịch tiếng Anh nguyên tác chương 5 (s1.felion.myaddr.io) | Khai Khiếu Đại Điển: điểm sáng là Hy Vọng Cổ, bay vào người theo từng bước; bảng số bước quyết định tư chất (dưới 10 / 10-20 / 20-30 / 30-40 / 40-50); Không Khiếu hiện dưới rốn | Bản dịch fan |
 | S12 | Bản dịch tiếng Anh nguyên tác, các chương 177, 463, 1129, 1606, 1630, 1645, 1680, 1753 (roliascan.com, s1.felion.myaddr.io) | Chuyển số Tiên Cổ: Xuân Thu Thiền Rank 6 rồi Rank 7; Niên Lưu Như Thủy Rank 8; Nhân Như Cố Rank 6; Thiên Nguyên Bảo Liên nâng Rank 6 lên 7 mà giữ tên; Định Tiên Du là Tiên Cổ Không Đạo có bản Rank 7 | Bản dịch fan |
 | S13 | Wikipedia, mục Reverend Insanity | Rank 6 là ranh giới phàm/tiên; Trí Tuệ Cổ Rank 9 | Bách khoa mở, tóm tắt |
+| S14 | Bản dịch tiếng Anh nguyên tác, các chương 8, 19, 62, 64, 157 (roliascan.com) | Rank của Cổ phàm: Nguyệt Quang Cổ, Tửu Trùng, Bạch Trư Cổ, Hắc Trư Cổ đều Rank 1; Bạch Ngọc Cổ Rank 2; Bạch/Hắc Trư tăng sức mạnh vĩnh viễn, ăn thịt heo; Nguyệt Quang Cổ là đặc sản của làng Cổ Nguyệt | Bản dịch fan |
 | S5 | Tài liệu Q&A với tác giả Cổ Chân Nhân (Google Docs công khai, nội dung dịch lại) | Đạo Ngân của các lưu phái khác nhau bài xích nhau | Chưa kiểm chứng gốc, chỉ dùng như ghi chú |
 
 ## Chưa đối chiếu được

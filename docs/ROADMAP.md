@@ -8,6 +8,7 @@
 - Hệ thống 01 (mức cơ bản): bản đồ năm đại vực, đường đi ngắn nhất theo thời gian, vị trí nội suy khi đang đi, phục kích, chặn khai thác khi đang đi (`engines/map_engine.py`, có test).
 - Khai Khiếu Đại Điển đúng bảng số bước và Bản Mệnh Cổ (`AWAKENING_RULES.md`, có test).
 - Thăng Tiên (`/thang-tien`): điều kiện, Nhân khí từ hành trình, khí theo vùng, quá trình theo thời gian, thành công/thất bại có hậu quả, trạng thái Cổ Tiên (xem `ASCENSION_RULES.md`, có test).
+- Phân cấp Cổ Trùng: 12/74 con đã đối chiếu nguyên tác, còn lại ở mức đề xuất (`GU_CLASSIFICATION.md`, `phan_cap_co_trung.txt`).
 - Chợ Cổ Trùng và giao dịch trực tiếp (`MARKET_RULES.md`): hàng tồn hữu hạn, giá theo cung cầu, thu mua lỗ, phí hủy, giao dịch nguyên tử chống nhân bản (có test chạy đồng thời).
 - Giao diện pixel toàn bộ: 37 màn hình (`core/screens.py`), cảnh Đại Điển Khai Khiếu, phân loại Phàm cổ/Tiên cổ có đối chiếu (`GU_CLASSIFICATION.md`).
 - Pixel art: 72 sprite Cổ Trùng (từ bảng sprite của bạn), banner, thẻ nhân vật, lưới Kho Cổ, bản đồ (xem `docs/ART.md`).

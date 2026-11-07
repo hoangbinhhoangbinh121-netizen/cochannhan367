@@ -158,9 +158,11 @@ class CultivationEngine:
                 c["stage"] = 0
                 c["essence"] = round(c["essence"] / self.portion_ratio(), 4)  # đổi sang 'phần' chuyển mới
                 char["lifespan_years"] = max(char["lifespan_years"], self.ranks[c["rank"]]["lifespan_years"])
-            c["essence"] = min(c["essence"], self.capacity(char))
+            refill = self.capacity(char) * self.cfg["breakthrough_refill_ratio"]  # đột phá thành công được bồi một phần chân nguyên
+            c["essence"] = round(min(c["essence"] + refill, self.capacity(char)), 4)
             c["essence_updated_day"] = world_day
             out["realm"] = self.realm_name(char)
+            out["refill"] = round(refill, 2)
         else:
             lo, hi = self.cfg["foundation_loss_on_fail"]
             loss = rng.randint(lo, hi)

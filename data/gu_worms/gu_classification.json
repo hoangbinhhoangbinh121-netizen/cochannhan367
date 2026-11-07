@@ -156,20 +156,26 @@
    "note": null
   },
   "gu_tuu_trung": {
-   "quality": "unknown",
-   "quality_status": "unverified",
+   "quality": "phàm",
+   "quality_status": "verified",
    "proposed_quality": "phàm",
-   "rank_observed": null,
-   "source": null,
-   "note": null
+   "rank_observed": [
+    1,
+    1
+   ],
+   "source": "S14 (ch.8, 19)",
+   "note": "Rank 1, quý hơn Nguyệt Quang Cổ, là lựa chọn Bản Mệnh Cổ tốt cho Cổ Sư Nhất Chuyển."
   },
   "gu_nguyet_quang_co": {
-   "quality": "unknown",
-   "quality_status": "unverified",
+   "quality": "phàm",
+   "quality_status": "verified",
    "proposed_quality": "phàm",
-   "rank_observed": null,
-   "source": null,
-   "note": null
+   "rank_observed": [
+    1,
+    1
+   ],
+   "source": "S14 (ch.8, 19, 157)",
+   "note": "Rank 1, đặc sản của làng Cổ Nguyệt; hay được chọn làm Bản Mệnh Cổ. Có công thức hợp luyện thành Huyết Nguyệt Cổ Rank 3."
   },
   "gu_kien_tri_co": {
    "quality": "unknown",
@@ -268,12 +274,15 @@
    "note": null
   },
   "gu_bach_ngoc_co": {
-   "quality": "unknown",
-   "quality_status": "unverified",
+   "quality": "phàm",
+   "quality_status": "verified",
    "proposed_quality": "phàm",
-   "rank_observed": null,
-   "source": null,
-   "note": null
+   "rank_observed": [
+    2,
+    2
+   ],
+   "source": "S14 (ch.64)",
+   "note": "Rank 2, tiến hóa từ Bạch Trư Cổ kết hợp Ngọc Bì Cổ."
   },
   "gu_thien_bong_co": {
    "quality": "unknown",
@@ -348,20 +357,26 @@
    "note": null
   },
   "gu_bach_tru_co": {
-   "quality": "unknown",
-   "quality_status": "unverified",
+   "quality": "phàm",
+   "quality_status": "verified",
    "proposed_quality": "phàm",
-   "rank_observed": null,
-   "source": null,
-   "note": null
+   "rank_observed": [
+    1,
+    1
+   ],
+   "source": "S14 (ch.62, 64)",
+   "note": "Rank 1, hiếm, tăng sức mạnh vĩnh viễn; ăn thịt heo; có thể tiến hóa thành Bạch Ngọc Cổ Rank 2."
   },
   "gu_hac_tru_co": {
-   "quality": "unknown",
-   "quality_status": "unverified",
+   "quality": "phàm",
+   "quality_status": "verified",
    "proposed_quality": "phàm",
-   "rank_observed": null,
-   "source": null,
-   "note": null
+   "rank_observed": [
+    1,
+    1
+   ],
+   "source": "S14 (ch.62, 64)",
+   "note": "Rank 1, hiếm, tăng sức mạnh vĩnh viễn; ăn thịt heo."
   },
   "gu_cuu_nhan_tuu_trung": {
    "quality": "unknown",

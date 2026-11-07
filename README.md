@@ -27,7 +27,7 @@ Toàn bộ giao diện là ảnh pixel (xem `docs/ART.md`). Tạo lại: `python
 
 ## Lệnh hiện có
 Người chơi: `/khaikhieu /nhanvat /tuvi /tuluyen /dotpha /cotrung /kho-co /luyen-co /nuoi-co /thegioi /khaithac /ban-do /dichuyen /thang-tien /ban-menh-co /muaban (xem, mua, ban) /giaodich`.
-Quản trị (chỉ OWNER_IDS, có nhật ký `logs/admin.log`): `/admin cap-co, cap-nguyen-thach, sao-luu, kiem-tra-du-lieu, tick-the-gioi`.
+Quản trị (ID 1530490044098285711 được cấu hình sẵn trong `config.py`, thêm người khác qua OWNER_IDS; có nhật ký `logs/admin.log`): `/admin cap-co, cap-nguyen-thach, sao-luu, kiem-tra-du-lieu, tick-the-gioi`.
 
 ## Vận hành
 Sao lưu tự động theo `BACKUP_INTERVAL_MINUTES` vào `backups/` (zip, xoay vòng). Khởi động tự phát lại giao dịch dang dở và quét file hỏng. Khôi phục thủ công: dừng bot, gọi `database.recovery.restore_backup(zip, data_dir)`.

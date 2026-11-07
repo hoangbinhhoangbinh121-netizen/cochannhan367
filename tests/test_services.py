@@ -172,7 +172,13 @@ class GuClassificationTests(unittest.TestCase):
     def test_immortal_gu_ranks_are_six_or_more_and_verified_ones_are_known(self):
         verified = {g["gu_id"]: g for g in self.d.gu.values() if g["quality_status"] == "verified"}
         self.assertEqual(set(verified), {"gu_xuan_thu_thien", "gu_dinh_tien_du", "gu_nien_luu_nhu_thuy_co", "gu_nhan_nhu_co_co",
-                                         "gu_thien_nguyen_bao_lien_co", "gu_tri_tue_co", "gu_hy_vong_co"})
+                                         "gu_thien_nguyen_bao_lien_co", "gu_tri_tue_co", "gu_hy_vong_co", "gu_nguyet_quang_co",
+                                         "gu_tuu_trung", "gu_bach_tru_co", "gu_hac_tru_co", "gu_bach_ngoc_co"})
+        for g in verified.values():
+            if g["quality"] == "phàm":
+                self.assertLessEqual(g["rank_observed"][1], 5, g["gu_id"])  # Cổ phàm tối đa Ngũ Chuyển
+            if self.d.playable(g) and g["rank_observed"]:
+                self.assertEqual(g["rank"], g["rank_observed"][0], g["gu_id"])  # số liệu chơi được phải khớp nguồn
         for g in verified.values():
             if g["quality"] == "tiên":
                 self.assertGreaterEqual(g["rank_observed"][0], 6, g["gu_id"])  # từ Lục Chuyển là Tiên Cổ

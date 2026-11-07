@@ -117,8 +117,10 @@ def breakthrough_confirm(pv: dict) -> Image.Image:
 
 def breakthrough_result(r: dict) -> Image.Image:
     if r["success"]:
-        return render("Đột phá thành công", [Text(f"Cảnh giới mới: {r['realm']}", 20, GOOD, True),
-                                              Text(f"Tỉ lệ lúc đột phá: {r['chance'] * 100:.0f}%", 14, MUTED)], ACC["cultivation"], "star")
+        rows = [("Tỉ lệ lúc đột phá", f"{r['chance'] * 100:.0f}%")]
+        if r.get("refill"):
+            rows.append(("Được bồi thêm", f"{r['refill']:.0f} chân nguyên", GOOD))
+        return render("Đột phá thành công", [Text(f"Cảnh giới mới: {r['realm']}", 20, GOOD, True), KV(rows)], ACC["cultivation"], "star")
     return render("Đột phá thất bại", [Text(f"Căn cơ tổn hại {r['foundation_loss']} điểm.", 18, BAD, True),
                                        Text("Hãy tích lũy lại chân nguyên trước khi thử lần nữa.", 15)], ACC["error"], "broken")
 

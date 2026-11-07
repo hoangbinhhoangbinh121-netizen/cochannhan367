@@ -94,7 +94,8 @@ class CultivationTests(unittest.TestCase):
         out = self.eng.attempt_breakthrough(c, 0.0, FixedRng(0.0))
         self.assertEqual(out["kind"], "rank")
         self.assertEqual((c["cultivation"]["rank"], c["cultivation"]["stage"]), (2, 0))
-        self.assertAlmostEqual(c["cultivation"]["essence"], (cap - cap * 0.8) / 10, places=3)
+        refill = self.eng.capacity(c) * RULES["cultivation"]["breakthrough_refill_ratio"]
+        self.assertAlmostEqual(c["cultivation"]["essence"], min(self.eng.capacity(c), (cap - cap * 0.8) / 10 + refill), places=3)
         self.assertEqual(c["lifespan_years"], 150)
 
     def test_rank5_peak_cannot_become_immortal_or_venerable_by_button(self):
@@ -120,6 +121,31 @@ class CultivationTests(unittest.TestCase):
         self.assertIsNone(self.eng.mortality(ext, 39 * 360, 20))
         self.assertIn("tự bạo", self.eng.mortality(ext, 40 * 360, 20))
         self.assertIsNone(self.eng.mortality(c, 80 * 360, 20))  # tư chất thường không bị hạn tự bạo
+
+
+class BalanceTests(unittest.TestCase):
+    def setUp(self):
+        self.eng = CultivationEngine(RULES)
+
+    def test_each_breakthrough_raises_capacity_substantially(self):
+        caps = [self.eng.capacity(make_char(1, st, ratio=0.5)) for st in range(4)]
+        for a, b in zip(caps, caps[1:]):
+            self.assertGreaterEqual(b / a, 1.6)  # mỗi tiểu cảnh giới tăng ít nhất 60%
+        self.assertGreaterEqual(caps[0], 80)  # Đinh/Bính vẫn có chân nguyên đáng kể ngay từ đầu
+
+    def test_successful_breakthrough_refills_essence(self):
+        c = make_char(1, 0)
+        out = self.eng.attempt_breakthrough(c, 0.0, FixedRng(0.0))
+        self.assertTrue(out["success"])
+        self.assertGreater(out["refill"], 0)
+        self.assertGreaterEqual(c["cultivation"]["essence"], out["refill"] - 0.01)
+
+    def test_gu_usage_is_cheap(self):
+        import json as _j
+        gu = _j.loads((ROOT / "data/gu_worms/gu_gameplay.json").read_text(encoding="utf-8"))["overrides"]
+        self.assertLessEqual(RULES["gu"]["refine_cost_ratio"], 0.05)
+        for gid, g in gu.items():
+            self.assertLessEqual(g["activation_cost"], 3.0, gid)
 
 
 class EconomyTests(unittest.TestCase):

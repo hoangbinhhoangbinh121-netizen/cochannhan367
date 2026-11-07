@@ -24,11 +24,11 @@
   ],
   "stage_capacity_mult": [
    1.0,
-   1.5,
-   2.25,
-   3.4
+   1.7,
+   2.9,
+   4.9
   ],
-  "base_capacity_portions": 100,
+  "base_capacity_portions": 160,
   "portion_ratio": 10,
   "list": [
    {
@@ -146,8 +146,8 @@
   "awakening_age_years": 15,
   "refine_efficiency_base": 0.6,
   "refine_efficiency_aptitude": 0.4,
-  "regen_per_day_base": 0.1,
-  "regen_per_day_aptitude": 0.2,
+  "regen_per_day_base": 0.12,
+  "regen_per_day_aptitude": 0.24,
   "extreme_physique_regen_mult": 2.0,
   "breakthrough_min_essence_ratio": 0.9,
   "breakthrough_cost_ratio": 0.8,
@@ -167,7 +167,8 @@
   "foundation_loss_on_fail": [
    3,
    8
-  ]
+  ],
+  "breakthrough_refill_ratio": 0.25
  },
  "extreme_physique": {
   "_status": "user: tự bạo nếu không thăng tiên trong thời hạn (file Thể chất, tư chất.docx); design: số năm",
@@ -177,7 +178,7 @@
   "_status": "design",
   "refined_slots_base": 2,
   "refined_slots_per_rank": 2,
-  "refine_cost_ratio": 0.1,
+  "refine_cost_ratio": 0.05,
   "refine_base_chance": 0.85,
   "refine_chance_per_rank_gap": 0.05,
   "refine_fail_death_chance": 0.5,

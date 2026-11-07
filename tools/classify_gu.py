@@ -39,6 +39,11 @@ VERIFIED = {
     "Nhân Như Cố": ("tiên", [6, 6], "S12 (ch.1680)", "Bản nguyên là Rank 6 (hiệu quả yếu với Cổ Tiên Rank 7-8)."),
     "Thiên Nguyên Bảo Liên Cổ": ("tiên", [6, 7], "S12 (ch.463)", "Là Tiên Cổ, có thể nâng từ Rank 6 lên Rank 7 mà vẫn giữ tên."),
     "Trí Tuệ Cổ": ("tiên", [9, 9], "S13 (Wikipedia)", "Rank 9; cũng là Cổ trong truyền thuyết Nhân Tổ (S11, ch.5)."),
+    "Nguyệt Quang Cổ": ("phàm", [1, 1], "S14 (ch.8, 19, 157)", "Rank 1, đặc sản của làng Cổ Nguyệt; hay được chọn làm Bản Mệnh Cổ. Có công thức hợp luyện thành Huyết Nguyệt Cổ Rank 3."),
+    "Tửu Trùng": ("phàm", [1, 1], "S14 (ch.8, 19)", "Rank 1, quý hơn Nguyệt Quang Cổ, là lựa chọn Bản Mệnh Cổ tốt cho Cổ Sư Nhất Chuyển."),
+    "Bạch Trư Cổ": ("phàm", [1, 1], "S14 (ch.62, 64)", "Rank 1, hiếm, tăng sức mạnh vĩnh viễn; ăn thịt heo; có thể tiến hóa thành Bạch Ngọc Cổ Rank 2."),
+    "Hắc Trư Cổ": ("phàm", [1, 1], "S14 (ch.62, 64)", "Rank 1, hiếm, tăng sức mạnh vĩnh viễn; ăn thịt heo."),
+    "Bạch Ngọc Cổ": ("phàm", [2, 2], "S14 (ch.64)", "Rank 2, tiến hóa từ Bạch Trư Cổ kết hợp Ngọc Bì Cổ."),
     "Hy Vọng Cổ": ("đặc thù", None, "S11 (ch.5)", "Cổ trong truyền thuyết Nhân Tổ; ánh sáng của nó dùng trong Khai Khiếu Đại Điển. Chưa có chuyển số."),
 }
 

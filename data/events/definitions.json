@@ -1,0 +1,11 @@
+{
+  "_status": "design: sự kiện thế giới mẫu để engine chạy được. Không phải sự kiện nguyên tác.",
+  "events": [
+    {"event_id": "dia_mach_trao_dang", "title": "Địa mạch Nguyên Thạch trào dâng",
+     "canon": "gameplay_design", "chance_per_day": 0.02, "condition": {"seasons": ["Xuân", "Thu"]},
+     "effect": {"type": "pool_add", "resource": "nguyen_thach", "fraction_of_max": 0.05, "region": "random"}},
+    {"event_id": "han_dong_can_kiet", "title": "Mùa đông khắc nghiệt làm cạn mạch nguồn",
+     "canon": "gameplay_design", "chance_per_day": 0.03, "condition": {"seasons": ["Đông"]},
+     "effect": {"type": "pool_add", "resource": "nguyen_thach", "fraction_of_max": -0.03, "region": "random"}}
+  ]
+}

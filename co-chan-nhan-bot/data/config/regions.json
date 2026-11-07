@@ -1,0 +1,171 @@
+{
+ "_status": "design: số liệu mỏ, tọa độ, địa hình, độ nguy hiểm là thiết kế tạm. Năm đại vực và vị trí tương đối (Nam, Bắc, Đông, Tây, Trung) là nguyên tác. qi (Thiên khí, Địa khí, mức bị dòm ngó) mỗi vùng là thiết kế tạm.",
+ "start_region": "nam_cuong",
+ "regions": {
+  "nam_cuong": {
+   "name": "Nam Cương",
+   "pools": {
+    "nguyen_thach": {
+     "max_reserve": 200000,
+     "regen_per_day": 400
+    }
+   },
+   "pos": [
+    500,
+    880
+   ],
+   "terrain": "núi rừng",
+   "terrain_mult": 1.4,
+   "danger": 3,
+   "qi": {
+    "heaven": 0.8,
+    "earth": 1.3,
+    "watch": 1
+   }
+  },
+  "bac_nguyen": {
+   "name": "Bắc Nguyên",
+   "pools": {
+    "nguyen_thach": {
+     "max_reserve": 300000,
+     "regen_per_day": 500
+    }
+   },
+   "pos": [
+    500,
+    120
+   ],
+   "terrain": "tuyết nguyên",
+   "terrain_mult": 1.2,
+   "danger": 3,
+   "qi": {
+    "heaven": 1.3,
+    "earth": 0.8,
+    "watch": 1
+   }
+  },
+  "dong_hai": {
+   "name": "Đông Hải",
+   "pools": {
+    "nguyen_thach": {
+     "max_reserve": 250000,
+     "regen_per_day": 450
+    }
+   },
+   "pos": [
+    880,
+    500
+   ],
+   "terrain": "biển",
+   "terrain_mult": 1.3,
+   "danger": 3,
+   "qi": {
+    "heaven": 1.1,
+    "earth": 0.9,
+    "watch": 1
+   }
+  },
+  "tay_mac": {
+   "name": "Tây Mạc",
+   "pools": {
+    "nguyen_thach": {
+     "max_reserve": 150000,
+     "regen_per_day": 300
+    }
+   },
+   "pos": [
+    120,
+    500
+   ],
+   "terrain": "sa mạc",
+   "terrain_mult": 1.3,
+   "danger": 4,
+   "qi": {
+    "heaven": 1.0,
+    "earth": 0.7,
+    "watch": 2
+   }
+  },
+  "trung_chau": {
+   "name": "Trung Châu",
+   "pools": {
+    "nguyen_thach": {
+     "max_reserve": 500000,
+     "regen_per_day": 800
+    }
+   },
+   "pos": [
+    500,
+    500
+   ],
+   "terrain": "đồng bằng",
+   "terrain_mult": 1.0,
+   "danger": 2,
+   "qi": {
+    "heaven": 1.0,
+    "earth": 1.0,
+    "watch": 3
+   }
+  }
+ },
+ "weather": {
+  "Xuân": [
+   "trời quang",
+   "mưa phùn",
+   "sương mù",
+   "gió nhẹ"
+  ],
+  "Hạ": [
+   "nắng gắt",
+   "mưa rào",
+   "oi bức",
+   "dông"
+  ],
+  "Thu": [
+   "trời quang",
+   "gió heo may",
+   "sương mù",
+   "mưa nhẹ"
+  ],
+  "Đông": [
+   "giá rét",
+   "tuyết rơi",
+   "âm u",
+   "gió bấc"
+  ]
+ },
+ "edges": [
+  [
+   "trung_chau",
+   "nam_cuong"
+  ],
+  [
+   "trung_chau",
+   "bac_nguyen"
+  ],
+  [
+   "trung_chau",
+   "dong_hai"
+  ],
+  [
+   "trung_chau",
+   "tay_mac"
+  ],
+  [
+   "nam_cuong",
+   "tay_mac"
+  ],
+  [
+   "tay_mac",
+   "bac_nguyen"
+  ],
+  [
+   "bac_nguyen",
+   "dong_hai"
+  ],
+  [
+   "dong_hai",
+   "nam_cuong"
+  ]
+ ]
+}

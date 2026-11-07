@@ -1,0 +1,92 @@
+PHÂN CẤP CỔ TRÙNG (74 con, 12 con đã đối chiếu nguyên tác)
+============================================================
+[ĐÃ XÁC MINH] = có nguồn nguyên tác; [ĐỀ XUẤT] = từ bảng người dùng cung cấp, chưa xác minh, chưa dùng cho gameplay.
+
+I. TIÊN CỔ (Lục Chuyển trở lên)
+------------------------------------------------------------
+[ĐÃ XÁC MINH] Nhân Như Cố Cổ | chuyển 6 | S12 (ch.1680)
+[ĐÃ XÁC MINH] Niên Lưu Như Thủy Cổ | chuyển 8 | S12 (ch.1129, 1606)
+[ĐÃ XÁC MINH] Thiên Nguyên Bảo Liên Cổ | chuyển 6-7 | S12 (ch.463)
+[ĐÃ XÁC MINH] Trí Tuệ Cổ | chuyển 9 | S13 (Wikipedia)
+[ĐÃ XÁC MINH] Xuân Thu Thiền | chuyển 6-7 | S12 (ch.177, 1630, 1645)
+[ĐÃ XÁC MINH] Định Tiên Du | chuyển 6-7 | S12 (ch.1753)
+[ĐỀ XUẤT]     Chí Tôn Tiên Thai Cổ
+[ĐỀ XUẤT]     Cổ Định Vận
+[ĐỀ XUẤT]     Liên Vận Cổ
+[ĐỀ XUẤT]     Mộng Điệp Tiên Cổ
+[ĐỀ XUẤT]     Nghịch Vận Cổ
+[ĐỀ XUẤT]     Sơn Như Cố Cổ
+[ĐỀ XUẤT]     Tình Cổ
+[ĐỀ XUẤT]     Vạn Ngã Tiên Cổ
+[ĐỀ XUẤT]     Đoạn Vận Cổ
+[ĐỀ XUẤT]     Đạo Sinh Cổ
+[ĐỀ XUẤT]     Độc Thệ Cổ
+
+II. PHÀM CỔ (Nhất đến Ngũ Chuyển)
+------------------------------------------------------------
+[ĐÃ XÁC MINH] Bạch Ngọc Cổ | chuyển 2 | S14 (ch.64)
+[ĐÃ XÁC MINH] Bạch Trư Cổ | chuyển 1 | S14 (ch.62, 64)
+[ĐÃ XÁC MINH] Hắc Trư Cổ | chuyển 1 | S14 (ch.62, 64)
+[ĐÃ XÁC MINH] Nguyệt Quang Cổ | chuyển 1 | S14 (ch.8, 19, 157)
+[ĐÃ XÁC MINH] Tửu Trùng | chuyển 1 | S14 (ch.8, 19)
+[ĐỀ XUẤT]     Băng Tinh Cổ
+[ĐỀ XUẤT]     Chó Nô Cổ
+[ĐỀ XUẤT]     Cá Sấu Lực Cổ
+[ĐỀ XUẤT]     Cường Luyện Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Cốt Dực Cổ
+[ĐỀ XUẤT]     Cốt Mâu Cổ
+[ĐỀ XUẤT]     Cửu Nhãn Tửu Trùng
+[ĐỀ XUẤT]     Cự Lực Cổ
+[ĐỀ XUẤT]     Ghi Ảnh Cổ
+[ĐỀ XUẤT]     Giấy Hạc Cổ
+[ĐỀ XUẤT]     Hoa Nụ Cổ
+[ĐỀ XUẤT]     Huyết Bộ Cổ
+[ĐỀ XUẤT]     Huyết Cảm Cổ
+[ĐỀ XUẤT]     Huyết Lô Cổ
+[ĐỀ XUẤT]     Huyết Nguyệt Cổ
+[ĐỀ XUẤT]     Hùng Lực Cổ
+[ĐỀ XUẤT]     Hương Thảo Tam Bộ Cổ
+[ĐỀ XUẤT]     Hạc Nô Cổ
+[ĐỀ XUẤT]     Hận Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Khứu Khí Cổ
+[ĐỀ XUẤT]     Kiên Trì Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Lam Điểu Băng Quan Cổ
+[ĐỀ XUẤT]     Liên Tâm Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Lôi Minh Cổ
+[ĐỀ XUẤT]     Lộc Nô Cổ
+[ĐỀ XUẤT]     Mộng Tạo Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Nguyệt Nha Cổ
+[ĐỀ XUẤT]     Phi Cốt Thuẫn Cổ
+[ĐỀ XUẤT]     Quang Giáp Cổ
+[ĐỀ XUẤT]     Sư Tử Hống Cổ
+[ĐỀ XUẤT]     Thanh Phong Luân Cổ
+[ĐỀ XUẤT]     Thanh Tâm Cổ
+[ĐỀ XUẤT]     Thiên Bồng Cổ
+[ĐỀ XUẤT]     Thiết Cân Cổ
+[ĐỀ XUẤT]     Thông Thiên Cổ
+[ĐỀ XUẤT]     Thư Trùng
+[ĐỀ XUẤT]     Thư Điệp Cổ
+[ĐỀ XUẤT]     Thần Niệm Cổ
+[ĐỀ XUẤT]     Thời Châm Cổ
+[ĐỀ XUẤT]     Thủy Toản Cổ
+[ĐỀ XUẤT]     Toàn Lực Cổ
+[ĐỀ XUẤT]     Truy Phong Cổ
+[ĐỀ XUẤT]     Trừ Nhiệt Cổ
+[ĐỀ XUẤT]     Tàng Khí Cổ
+[ĐỀ XUẤT]     Tâm Âm Cổ
+[ĐỀ XUẤT]     Tẩy Thủy Cổ
+[ĐỀ XUẤT]     Tử Kỳ Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Vận Khí Cổ  (Bảng đề xuất tự ghi 'chưa xác định / cần đối chiếu'.)
+[ĐỀ XUẤT]     Đao Dực Cổ
+[ĐỀ XUẤT]     Ẩn Tức Cổ
+
+III. CỔ ĐẶC THÙ
+------------------------------------------------------------
+[ĐÃ XÁC MINH] Hy Vọng Cổ | chuyển - | S11 (ch.5)
+[ĐỀ XUẤT]     Mệnh Cổ
+
+LƯU Ý
+- Chuyển số không suy ra được từ tên hay công dụng; mỗi Cổ cần nguồn riêng.
+- Tiên Cổ cùng tên có thể tăng chuyển số khi nâng cấp; Định Tiên Du có cả bản Rank 6 và Rank 7.
+- Chí Tôn Tiên Thai Cổ chưa xác minh được chuyển số.
+- Bảng gốc có 75 dòng nhưng Thủy Toản Cổ trùng hai lần nên còn 74 con.
